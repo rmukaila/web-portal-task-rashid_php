@@ -22,8 +22,10 @@ Route::get('/test_response', function () {
 Route::get('/', function () {
 
     
-$bearer_token = 'Bearer 559de1a07350c5bfb09f750d6c970ec4e9162092';
+$bearer_token = 'Bearer 1cd2de386faf22d886b6ff93884a6ab1c75629a2';
+// $bearer_token = 'Basic QVBJX0V4cGxvcmVyOjEyMzQ1NmlzQUxhbWVQYXNz';
 $url = 'https://api.baubuddy.de/dev/index.php/v1/tasks/select';
+// $url = "https://api.baubuddy.de/index.php/login";
 $headers = [
     'Content-Type' => 'application/json',
     'Authorization' => $bearer_token,
@@ -41,10 +43,15 @@ $response = $client->get($url, [
 
 // Get the response body
 $tasks = json_decode((string)$response->getBody());
+// $tokenInfo = json_decode((string)$response->getBody());
 
-// Handle the response
-// echo $body;
-// return $body;
+// // Handle the response
+// // echo $body;
+// // return $body;
+// // var_dump($tasks);
+// $tasks = $tokenInfo->oauth->access_token;
+// var_dump($tasks);
+// var_dump($tasks);
 // var_dump($tasks);
 return view('welcome',['tasks'=>$tasks]);
 
