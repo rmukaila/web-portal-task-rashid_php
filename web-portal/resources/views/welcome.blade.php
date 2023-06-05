@@ -4,7 +4,7 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
 
-        <title>Laravel</title>
+        <title>Web portal</title>
 
         <!-- Fonts -->
         <link rel="preconnect" href="https://fonts.bunny.net">
@@ -15,7 +15,7 @@
         <!-- Styles -->
        
     </head>
-    <body class="antialiased">
+    
     <table>
         <thead>
             <tr>
@@ -26,12 +26,20 @@
             </tr>
         </thead>
         <tbody>
-            <tr>
-                <td>Task 1</td>
-                <td>Title 1</td>
-                <td>Description 1</td>
-                <td>#FF0000</td>
-            </tr>
+            
+            
+            <?php 
+            foreach($tasks as $task){
+                echo "<tr>";
+                echo "<td>$task->task</td>";
+                echo "<td>$task->title</td>";
+                echo "<td>$task->description</td>";
+                echo "<td>$task->colorCode</td>";
+                echo "</tr>";
+            }
+            ?>
+            
+            
            
             <!-- Add more rows as needed -->
         </tbody>

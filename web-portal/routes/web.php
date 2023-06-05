@@ -14,18 +14,19 @@ use GuzzleHttp\Client;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
+Route::get('/test_response', function () {
+    // $tasks = getTasks();
+    // return view('welcome')->with('tasks':$tasks);
 });
 
-Route::get('/test_response', function () {
+Route::get('/', function () {
 
     
-
+$bearer_token = 'Bearer 559de1a07350c5bfb09f750d6c970ec4e9162092';
 $url = 'https://api.baubuddy.de/dev/index.php/v1/tasks/select';
 $headers = [
     'Content-Type' => 'application/json',
-    'Authorization' => 'Bearer 91f14c3e4e72b9645bc36f7f31239a4295bc48e8',
+    'Authorization' => $bearer_token,
 ];
 $data = [
     'username' => '365',
@@ -39,10 +40,14 @@ $response = $client->get($url, [
 ]);
 
 // Get the response body
-$body = $response->getBody();
+$tasks = json_decode((string)$response->getBody());
 
 // Handle the response
-echo $body;
+// echo $body;
+// return $body;
+// var_dump($tasks);
+return view('welcome',['tasks'=>$tasks]);
 
-    return res;
+
+    
 });

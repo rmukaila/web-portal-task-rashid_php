@@ -15,3 +15,8 @@ function openModal() {
     };
 }
 
+//function to do an ajax call to the backend and populate the table every 60
+function refreshTable(){
+    tableID = document.getElementById("imageUpload")
+}
+
