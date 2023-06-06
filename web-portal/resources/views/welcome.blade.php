@@ -34,7 +34,7 @@
                 echo "<td>$task->task</td>";
                 echo "<td>$task->title</td>";
                 echo "<td>$task->description</td>";
-                echo "<td>$task->colorCode</td>";
+                echo "<td style=background-color:$task->colorCode;>$task->colorCode</td>";
                 echo "</tr>";
             }
             ?>
