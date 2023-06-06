@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use GuzzleHttp\Client;
+// use routes\Helpers;
 
 /*
 |--------------------------------------------------------------------------
@@ -22,27 +23,28 @@ Route::get('/test_response', function () {
 Route::get('/', function () {
 
     
-$bearer_token = 'Bearer 1cd2de386faf22d886b6ff93884a6ab1c75629a2';
-// $bearer_token = 'Basic QVBJX0V4cGxvcmVyOjEyMzQ1NmlzQUxhbWVQYXNz';
-$url = 'https://api.baubuddy.de/dev/index.php/v1/tasks/select';
-// $url = "https://api.baubuddy.de/index.php/login";
-$headers = [
-    'Content-Type' => 'application/json',
-    'Authorization' => $bearer_token,
-];
-$data = [
-    'username' => '365',
-    'password' => '1',
-];
+// $bearer_token = 'Bearer 1cd2de386faf22d886b6ff93884a6ab1c75629a2';
+// // $bearer_token = 'Basic QVBJX0V4cGxvcmVyOjEyMzQ1NmlzQUxhbWVQYXNz';
+// $url = 'https://api.baubuddy.de/dev/index.php/v1/tasks/select';
+// // $url = "https://api.baubuddy.de/index.php/login";
+// $headers = [
+//     'Content-Type' => 'application/json',
+//     'Authorization' => $bearer_token,
+// ];
+// $data = [
+//     'username' => '365',
+//     'password' => '1',
+// ];
 
-$client = new Client();
-$response = $client->get($url, [
-    'headers' => $headers,
-    'json' => $data,
-]);
+// $client = new Client();
+// $response = $client->get($url, [
+//     'headers' => $headers,
+//     'json' => $data,
+// ]);
 
 // Get the response body
-$tasks = json_decode((string)$response->getBody());
+// $apiCAller = new Helpers;
+$tasks = fetchOrUpdateData();#json_decode((string)$response->getBody());
 // $tokenInfo = json_decode((string)$response->getBody());
 
 // // Handle the response
