@@ -15,8 +15,10 @@
         <!-- Styles -->
        
     </head>
+    <input type="text" id="searchInput" placeholder="Search for data..." onkeyup="searchTable()">
+
     
-    <table>
+    <table id="myTable">
         <thead>
             <tr>
                 <th>Task</th>
