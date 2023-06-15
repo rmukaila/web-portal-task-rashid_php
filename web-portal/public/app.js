@@ -1,11 +1,16 @@
 // Function to open the modal
 function openModal() {
     var modal = document.getElementById("myModal");
+    var inputImage = document.getElementById("imageUpload");
+    var selectedImage = document.getElementById("selectedImage");
     modal.style.display = "block";
 
     //code for closing modeal when user clicks anywhere else
     window.onclick = function(event) {
         if (event.target == modal) {
+        
+        inputImage.value = "";
+        selectedImage.src = ""
           modal.style.display = "none";
         }
       }
@@ -13,6 +18,9 @@ function openModal() {
       //code for closing modal by clicking modal close icon
       modalClose = document.getElementById("modalClose")
       modalClose.onclick = function() {
+        
+        inputImage.value = "";
+        selectedImage.src = ""
         modal.style.display = "none";
       }
 
@@ -65,7 +73,6 @@ function refreshTable(){
     // Function to update the table
     function updateTable() {
         // Perform the table update here
-        // For demonstration purposes, let's assume we are updating the table with new data from an API call
         
         // Example code to fetch new data from an API endpoint
         fetch('get_data_only')
@@ -74,7 +81,7 @@ function refreshTable(){
                 // Assuming the table has an id of "myTable"
                 var table = document.getElementById("myTable");
                 
-                // Clear existing table rows
+                // Clear existing table rows except first row(table heads)
                 while (table.rows.length > 1) {
                     table.deleteRow(1);
                 }
@@ -86,8 +93,8 @@ function refreshTable(){
                     var cell2 = row.insertCell();
                     var cell3 = row.insertCell();
                     var cell4 = row.insertCell();
-                    cell4.style.background_color="blue"//item.colorCode;
-                    
+                    cell4.bgColor=item.colorCode;
+                    // console.log(cell4)
                     cell1.textContent = item.task;
                     cell2.textContent = item.title;
                     cell3.textContent = item.description;
@@ -103,7 +110,7 @@ function refreshTable(){
     function scheduleTableUpdate() {
         updateTable(); // Update immediately
         
-        setInterval(updateTable,2000);// 60 * 60 * 1000); // Schedule updates every 60 minutes (60 * 60 * 1000 milliseconds)
+        setInterval(updateTable, 60 * 60 * 1000); // Schedule updates every 60 minutes (60 * 60 * 1000 milliseconds)
     }
     
     // Call the function to start updating the table

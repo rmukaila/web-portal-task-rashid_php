@@ -15,6 +15,9 @@
         <!-- Styles -->
        
     </head>
+    <body>
+        
+    <div class="container">
     <!-- Search input field -->
     <input type="text" id="searchInput" placeholder="Search for data..." onkeyup="searchTable()">
      
@@ -61,6 +64,6 @@
         <img id="selectedImage" src="#" alt="Selected Image" style="max-width: 100%; max-height: 300px; margin-top: 10px; display: none;">
     </div>
 </div>
-        
+</div>
     </body>
 </html>
