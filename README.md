@@ -1,11 +1,11 @@
 ## Steps to run the app
 ### Make sure to have both composer and php version 8 and above installed
 #### 1) clone the repo and cd into web-portal
-#### 2) run composer install on terminal
-### 3) run npm install again on terminal
-### 4) run cp .env.example .env
-### 5) run php artisan key:generate
-### 6) run php artisan serve
+#### 2) run "composer install" on terminal
+### 3) run "npm install" again on terminal
+### 4) run "cp .env.example .env"
+### 5) run "php artisan key:generate"
+### 6) run "php artisan serve"
 ### 7) visit http://127.0.0.1:8000 on browser to see the app live!
 
 ## The files that contains the main codes are: 
