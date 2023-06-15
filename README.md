@@ -1,5 +1,5 @@
 ## Steps to run the app
-### Make sure to have both composer and php version 8 and above installed
+### Please make sure to have npm, composer and php version 8 and above installed
 #### 1) clone the repo and cd into web-portal
 #### 2) run "composer install" on terminal
 ### 3) run "npm install" again on terminal
