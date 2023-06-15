@@ -61,5 +61,52 @@ function refreshTable(){
             }
         }
 
-    //code to close the modal
+
+    // Function to update the table
+    function updateTable() {
+        // Perform the table update here
+        // For demonstration purposes, let's assume we are updating the table with new data from an API call
+        
+        // Example code to fetch new data from an API endpoint
+        fetch('get_data_only')
+            .then(response => response.json())
+            .then(data => {
+                // Assuming the table has an id of "myTable"
+                var table = document.getElementById("myTable");
+                
+                // Clear existing table rows
+                while (table.rows.length > 1) {
+                    table.deleteRow(1);
+                }
+                
+                // Iterate through the new data and add rows to the table
+                data.forEach(item => {
+                    var row = table.insertRow();
+                    var cell1 = row.insertCell();
+                    var cell2 = row.insertCell();
+                    var cell3 = row.insertCell();
+                    var cell4 = row.insertCell();
+                    cell4.style.background_color="blue"//item.colorCode;
+                    
+                    cell1.textContent = item.task;
+                    cell2.textContent = item.title;
+                    cell3.textContent = item.description;
+                    cell4.textContent = item.colorCode;
+                });
+            })
+            .catch(error => {
+                console.error('Error:', error);
+            });
+    }
+    
+    // Function to update the table every 60 minutes
+    function scheduleTableUpdate() {
+        updateTable(); // Update immediately
+        
+        setInterval(updateTable,2000);// 60 * 60 * 1000); // Schedule updates every 60 minutes (60 * 60 * 1000 milliseconds)
+    }
+    
+    // Call the function to start updating the table
+    document.onload=scheduleTableUpdate();
+    
     

@@ -15,8 +15,11 @@
         <!-- Styles -->
        
     </head>
+    <!-- Search input field -->
     <input type="text" id="searchInput" placeholder="Search for data..." onkeyup="searchTable()">
-
+     
+    <!-- Button to open the modal -->
+    <button onclick="openModal()">Open Modal</button>
     
     <table id="myTable">
         <thead>
@@ -46,8 +49,7 @@
             <!-- Add more rows as needed -->
         </tbody>
 
-         <!-- Button to open the modal -->
-    <button onclick="openModal()">Open Modal</button>
+        
 
 <!-- Modal -->
 <div id="myModal" class="modal">

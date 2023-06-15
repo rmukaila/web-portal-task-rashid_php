@@ -60,3 +60,10 @@ return view('welcome',['tasks'=>$tasks]);
 
     
 });
+
+Route::get('/get_data_only', function () {
+    $tasks = fetchOrUpdateData();
+
+    return $tasks;
+
+});
