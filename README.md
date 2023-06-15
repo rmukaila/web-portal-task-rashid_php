@@ -1,3 +1,22 @@
+## Steps to run the app
+### Make sure to have both composer and php version 8 and above installed
+#### 1) clone the repo and cd into web-portal
+#### 2) run composer install on terminal
+### 3) run npm install again on terminal
+### 4) run cp .env.example .env
+### 5) run php artisan key:generate
+### 6) run php artisan serve
+### 7) visit http://127.0.0.1:8000 on browser to see the app live!
+
+## The files that contains the main codes are: 
+### - app.js and app.css found in web-portal/public/
+### - helpers.php found in web-portal/app/misc/
+### - welcome.blade.php found in web-portal/resources/views/
+### - web.php found in web-portal/routes/
+
+
+
+
 Hello dear web portal dev prospect!
 
 This repository is a playground for your submission which should use PHP in the backend and HTML/JS in the frontend.
