@@ -52,6 +52,7 @@
 <!-- Modal -->
 <div id="myModal" class="modal">
     <div class="modal-content">
+        <span class="close" id="modalClose" style="float:right;">&times;</span>
         <h2>Select an Image</h2>
         <input type="file" id="imageUpload" accept="image/*">
         <br>

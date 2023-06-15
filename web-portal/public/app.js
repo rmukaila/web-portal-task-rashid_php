@@ -3,6 +3,19 @@ function openModal() {
     var modal = document.getElementById("myModal");
     modal.style.display = "block";
 
+    //code for closing modeal when user clicks anywhere else
+    window.onclick = function(event) {
+        if (event.target == modal) {
+          modal.style.display = "none";
+        }
+      }
+
+      //code for closing modal by clicking modal close icon
+      modalClose = document.getElementById("modalClose")
+      modalClose.onclick = function() {
+        modal.style.display = "none";
+      }
+
 
     document.getElementById("imageUpload").onchange = function (e) {
         var reader = new FileReader();
@@ -14,6 +27,8 @@ function openModal() {
         reader.readAsDataURL(e.target.files[0]);
     };
 }
+
+
 
 //function to do an ajax call to the backend and populate the table every 60
 function refreshTable(){
@@ -45,3 +60,6 @@ function refreshTable(){
                 }
             }
         }
+
+    //code to close the modal
+    
